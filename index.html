@@ -1,14 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width = device-width, initial-scale = 1">
-        <title>Tetris</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <canvas id="my-canvas"></canvas>
+<html lang="de">
 
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tetris</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" type="text/css">
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="./img/logo-light.PNG" alt="Logo">
+  </header>
+  <canvas id="canvas"></canvas>
+  <!-- <div class="overlay">
+      <p>Game over</p>
+      <button class="restart-btn">Restart</button>
+    </div> -->
+  <div class="botlane">
+    <div class="scoreboard">
+      <div class="score">
+        <div>0</div>
+        <p>Score</p>
+      </div>
+      <div class="highscore">
+        <div>-</div>
+        <p>High- <br> score</p>
+      </div>
+    </div>
+    <button class="restart-btn mobile-only">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+      </svg>
+    </button>
+  </div>
+</body>
+<script src="./js/constants.js"></script>
+<script src="./js/tetrimino.js"></script>
+<script src="./js/gameboard.js"></script>
+<script src="./js/tetris.js"></script>
+<script src="./js/dom.js"></script>
+
 </html>
