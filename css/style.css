@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+html {
+  font-family: 'Press Start 2P', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  touch-action: pinch-zoom;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  max-width: 700px;
+  display: block;
+  margin: auto;
+}
+
+header {
+  height: 75px;
+  padding: 10px 10px 25px;
+}
+
+header .logo {
+  height: 100%;
+}
+
+#canvas {
+  display: block;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.botlane {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+.scoreboard {
+  display: flex;
+}
+
+.score, .highscore {
+  text-align: center;
+  margin-right: 25px;
+}
+
+.score p, .highscore p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.score div, .highscore div {
+  font-size: 20px;
+}
+
+.restart-btn {
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 9999px;
+  box-shadow: 1px 1px 5px 2px rgba(0,0,0,0.1);
+}
+
+.restart-btn svg {
+  height: 40px;
+  width: 40px;
+}
