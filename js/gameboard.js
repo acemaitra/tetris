@@ -130,3 +130,6 @@ class Gameboard {
     this.grid = this.makeStartingGrid()
   }
 }
+
+const gb = new Gameboard()
+gb.grid

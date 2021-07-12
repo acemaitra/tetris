@@ -17,14 +17,14 @@ ctx.scale(scalingFactor, scalingFactor)
 const gameboard = new Gameboard(ctx)
 
 let score = 0
-let highscore = localStorage.getItem('highscore')
+let highscore = localStorage.getItem('highscore') // highscore wird mit localstorage gleichgesetzt
 
-if (!highscore) {
-  localStorage.setItem('highscore', 0)
+if (!highscore) { // wenn highscore nicht vorhanden ist
+  localStorage.setItem('highscore', 0) // dann wird local storage item gesetzt: hihghscore mit dem Wert 0
   highscore = 0
 }
 
-document.querySelector('.highscore > div').innerHTML = highscore
+document.querySelector('.highscore > div').innerHTML = highscore // HTML-Wert wird zum Highscore Wert
 
 setInterval(() => {
   newGameState()
@@ -34,8 +34,8 @@ let newGameState = () => {
   fullSend() 
   if (gameboard.currentTetrimino === null) {
     const rand = Math.round(Math.random() * 6) + 1
-    const newTetrimino = new Tetrimino(SHAPES[rand], ctx) 
-    gameboard.currentTetrimino = newTetrimino 
+    const newTetrimino = new Tetrimino(SHAPES[rand], ctx)
+    gameboard.currentTetrimino = newTetrimino
     gameboard.moveDown()
   } else {
     gameboard.moveDown()
@@ -56,10 +56,10 @@ const fullSend = () => {
     if (allFilled(gameboard.grid[i])) {
       score += 1
       document.querySelector('.score > div').innerHTML = score
-      if (score > highscore) {
-        localStorage.setItem('highscore', score)
+      if (score > highscore) { // wenn score größer als highscore
+        localStorage.setItem('highscore', score) // dann setze highscore im local Storage mit dem score Wert
         highscore = score
-        document.querySelector('.highscore > div').innerHTML = highscore
+        document.querySelector('.highscore > div').innerHTML = highscore // HTML updaten
       }
       gameboard.grid.splice(i, 1) 
       gameboard.grid.unshift([0,0,0,0,0,0,0,0,0,0])
@@ -94,7 +94,7 @@ document.addEventListener("keydown", (e) => {
 let prevX = null
 let prevY = null
 
-canvas.addEventListener('touchmove', e => {
+canvas.addEventListener('touchmove', e => { // Eventlistener: touchmove wird während dem swipen getriggert (touchstart und end würde mit swipen nur einmal getriggert werden)
   console.log(e)
   if (prevX !== null || prevY !== null) {
     if (e.changedTouches[0].clientX > prevX + 24) {
@@ -132,6 +132,8 @@ restartBtn.addEventListener('click', () => {
   console.log('askjlhfla')
   gameboard.grid = gameboard.makeStartingGrid()
   gameboard.currentTetrimino = null
+  score = 0
+  document.querySelector('.score > div').innerHTML = score
 })
 
 // restartBtn.onclick = function() {
